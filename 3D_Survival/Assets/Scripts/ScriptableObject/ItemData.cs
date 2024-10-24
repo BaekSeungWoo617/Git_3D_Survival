@@ -1,20 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public enum ItemType
 { 
-Equipable,
-Consumable,
+    Equipable,
+    Consumable,
     Resource
 }
 public enum ConsumableType
 {
-Health,
+    Health,
     Hunger
 }
 
-[SerializeField]
+[Serializable]
 public class ItemDataComsumable
 {
     public ConsumableType type;
@@ -37,4 +38,7 @@ public class ItemData : ScriptableObject
 
     [Header("Consumable")]
     public ItemDataComsumable[] consumables;
+
+    [Header("Equip")]
+    public GameObject equipPrefab;
 }

@@ -5,6 +5,7 @@ using System;
 public class Player : MonoBehaviour
 {
     public PlayerController controller;
+    public PlayerEscape escape;
     public PlayerCondition condition;
     public Equipment equip;
 

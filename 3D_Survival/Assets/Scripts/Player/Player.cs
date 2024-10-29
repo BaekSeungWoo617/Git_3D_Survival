@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     {
         CharacterManager.Instance.Player = this;
         controller = GetComponent<PlayerController>();
+        escape = GetComponent<PlayerEscape>();
         condition = GetComponent<PlayerCondition>();
         equip = GetComponent<Equipment>();
     }

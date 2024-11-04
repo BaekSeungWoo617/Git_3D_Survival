@@ -12,6 +12,7 @@ public class PlayerCondition : MonoBehaviour, IDamagable
     public UICondition uiCondition;
 
     Condition health { get { return uiCondition.health; } }
+    Condition mana { get { return uiCondition.health; } }
     Condition hunger { get { return uiCondition.hunger; } }
     Condition stamina { get { return uiCondition.stamina; } }
 
@@ -59,6 +60,15 @@ public class PlayerCondition : MonoBehaviour, IDamagable
             return false;
         }
         stamina.Subtract(amount);
+        return true;
+    }
+    public bool UseMana(float cost)
+    {
+        if (mana.curValue - cost < 0f)
+        {
+            return false;
+        }
+        mana.Subtract(cost);
         return true;
     }
 }

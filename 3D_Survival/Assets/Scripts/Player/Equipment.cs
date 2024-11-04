@@ -38,4 +38,11 @@ public class Equipment : MonoBehaviour
             curEquip.OnAttackInput();
         }
     }
+    public void OnSkillInput(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed && curEquip != null && controller.canLook)
+        {
+            curEquip.OnSkillInput();
+        }
+    }
 }

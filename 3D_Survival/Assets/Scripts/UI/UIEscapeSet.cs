@@ -29,12 +29,12 @@ public class UIEscapeSet : MonoBehaviour
             uIEscapeSet.SetActive(true);
         }
     }
-    public void OffButton()
-    {
-        uIEscapeSet.SetActive(false);
-    }
     public bool IsOpen()
     {
         return uIEscapeSet.activeInHierarchy;
+    }
+    public void OffButton()
+    {
+        uIEscapeSet.SetActive(false);
     }
 }

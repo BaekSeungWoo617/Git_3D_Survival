@@ -226,6 +226,14 @@ public class NPC : MonoBehaviour, IDamagable
 
         StartCoroutine(DamageFlash());
     }
+    public void TakeMagicalDamage(int damageAmount)
+    {
+        health -= damageAmount;
+        if (health <= 0)
+            Die();
+
+        StartCoroutine(DamageFlash());
+    }
 
     void Die()
     {
@@ -246,4 +254,5 @@ public class NPC : MonoBehaviour, IDamagable
         for (int x = 0; x < meshRenderers.Length; x++)
             meshRenderers[x].material.color = Color.white;
     }
+
 }

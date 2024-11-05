@@ -6,6 +6,7 @@ using UnityEngine;
 public interface IDamagable
 {
     void TakePhysicalDamage(int damage);
+    void TakeMagicalDamage(int damage);
 }
 public class PlayerCondition : MonoBehaviour, IDamagable
 {
@@ -52,6 +53,12 @@ public class PlayerCondition : MonoBehaviour, IDamagable
         health.Subtract(damage);
         onTakeDamage?.Invoke();
     }
+    public void TakeMagicalDamage(int damage)
+    {
+        health.Subtract(damage);
+        onTakeDamage?.Invoke();
+        //마나 감소는 어디에서 하나용
+    }
 
     public bool UseStamina(float amount)
     {
@@ -69,6 +76,12 @@ public class PlayerCondition : MonoBehaviour, IDamagable
             return false;
         }
         mana.Subtract(cost);
+        Debug.Log(mana.curValue);
         return true;
     }
+    public void ManaAdd(float amount)
+    {
+        mana.Add(amount);
+    }
+
 }
